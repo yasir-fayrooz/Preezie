@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Preezie.DataAccess.Database;
+using Preezie.DataAccess.Models.User;
 using Preezie.Services.UsersService.Validators;
 using Preezie.Shared.DTOs.Paging;
 using Preezie.Shared.DTOs.Users;
@@ -46,7 +47,7 @@ namespace Preezie.Services.UsersService
             //Add paging
             query = query.Skip(userQueryDTO.Page * userQueryDTO.PageSize).Take(userQueryDTO.PageSize);
 
-            var users = await query.ToListAsync();
+            var users = await query.AsNoTracking().ToListAsync();
 
             //Map DB Model to DTO
             var userListDTO = _mapper.Map<List<UserList_DTO>>(users);
@@ -61,11 +62,34 @@ namespace Preezie.Services.UsersService
 
         public async Task CreateUser(CreateUser_DTO userDTO)
         {
+            if (_context.Users.Any(x => x.Email.Equals(userDTO.Email, StringComparison.CurrentCultureIgnoreCase)))
+                throw new BadRequestException("User ID already exists in system");
 
+            await _context.Users.AddAsync(new User
+            {
+                Email = userDTO.Email,
+                DisplayName = userDTO.DisplayName,
+                Password = userDTO.Password
+            });
+
+            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateUser(string userID, UpdateUser_DTO userUpdateDTO)
         {
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == userID);
+
+            //Return not found response if no user found
+            if(user == null)
+                throw new NotFoundException("User ID could not be found");
+
+            if (!string.IsNullOrEmpty(userUpdateDTO.DisplayName))
+                user.DisplayName = userUpdateDTO.DisplayName;
+
+            if (!string.IsNullOrEmpty(userUpdateDTO.Password))
+                user.Password = userUpdateDTO.Password;
+
+            await _context.SaveChangesAsync();
         }
     }
 }
