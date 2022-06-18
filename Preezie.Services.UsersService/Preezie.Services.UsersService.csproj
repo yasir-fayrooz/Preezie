@@ -8,11 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.18" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Preezie.DataAccess.Database\Preezie.DataAccess.Database.csproj" />
     <ProjectReference Include="..\Preezie.Shared.DTOs\Preezie.Shared.DTOs.csproj" />
+    <ProjectReference Include="..\Preezie.Solution.ExceptionHandler\Preezie.Solution.ExceptionHandler.csproj" />
   </ItemGroup>
 
 </Project>

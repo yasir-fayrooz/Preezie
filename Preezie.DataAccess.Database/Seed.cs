@@ -15,60 +15,6 @@ namespace Preezie.DataAccess.Database
             {
                 new User
                 {
-                    Email = "Test1@test.com",
-                    DisplayName = "Test1",
-                    Password = "Testing1"
-                },
-                new User
-                {
-                    Email = "Test2@test.com",
-                    DisplayName = "Test2",
-                    Password = "Testing2"
-                },
-                new User
-                {
-                    Email = "Test3@test.com",
-                    DisplayName = "Test3",
-                    Password = "Testing3"
-                },
-                new User
-                {
-                    Email = "Test4@test.com",
-                    DisplayName = "Test4",
-                    Password = "Testing4"
-                },
-                new User
-                {
-                    Email = "Test5@test.com",
-                    DisplayName = "Test5",
-                    Password = "Testing5"
-                },
-                new User
-                {
-                    Email = "Test6@test.com",
-                    DisplayName = "Test6",
-                    Password = "Testing6"
-                },
-                new User
-                {
-                    Email = "Test7@test.com",
-                    DisplayName = "Test7",
-                    Password = "Testing7"
-                },
-                new User
-                {
-                    Email = "Test8@test.com",
-                    DisplayName = "Test8",
-                    Password = "Testing8"
-                },
-                new User
-                {
-                    Email = "Test9@test.com",
-                    DisplayName = "Test9",
-                    Password = "Testing9"
-                },
-                new User
-                {
                     Email = "Test10@test.com",
                     DisplayName = "Test10",
                     Password = "Testing10"
@@ -133,6 +79,60 @@ namespace Preezie.DataAccess.Database
                     DisplayName = "Test20",
                     Password = "Testing20"
                 },
+                new User
+                {
+                    Email = "Test1@test.com",
+                    DisplayName = "Test1",
+                    Password = "Testing1"
+                },
+                new User
+                {
+                    Email = "Test2@test.com",
+                    DisplayName = "Test2",
+                    Password = "Testing2"
+                },
+                new User
+                {
+                    Email = "Test3@test.com",
+                    DisplayName = "Test3",
+                    Password = "Testing3"
+                },
+                new User
+                {
+                    Email = "Test4@test.com",
+                    DisplayName = "Test4",
+                    Password = "Testing4"
+                },
+                new User
+                {
+                    Email = "Test5@test.com",
+                    DisplayName = "Test5",
+                    Password = "Testing5"
+                },
+                new User
+                {
+                    Email = "Test6@test.com",
+                    DisplayName = "Test6",
+                    Password = "Testing6"
+                },
+                new User
+                {
+                    Email = "Test7@test.com",
+                    DisplayName = "Test7",
+                    Password = "Testing7"
+                },
+                new User
+                {
+                    Email = "Test8@test.com",
+                    DisplayName = "Test8",
+                    Password = "Testing8"
+                },
+                new User
+                {
+                    Email = "Test9@test.com",
+                    DisplayName = "Test9",
+                    Password = "Testing9"
+                }
             };
 
             await context.Users.AddRangeAsync(users);
