@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preezie.Solution.ExceptionH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preezie.Solution.ApiFilters", "Preezie.Solution.ApiFilters\Preezie.Solution.ApiFilters.csproj", "{8522D4F2-9FB3-4C45-8727-2A9DA2376BA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preezie.Shared.DTOs", "Preezie.Shared.DTOs\Preezie.Shared.DTOs.csproj", "{82B09A41-0818-4015-BD2C-EF1C6228B49B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8522D4F2-9FB3-4C45-8727-2A9DA2376BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8522D4F2-9FB3-4C45-8727-2A9DA2376BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8522D4F2-9FB3-4C45-8727-2A9DA2376BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82B09A41-0818-4015-BD2C-EF1C6228B49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82B09A41-0818-4015-BD2C-EF1C6228B49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B09A41-0818-4015-BD2C-EF1C6228B49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82B09A41-0818-4015-BD2C-EF1C6228B49B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{F8F5A5AE-D658-4844-91CF-2533B370A60C} = {B4ED5004-0F88-4DC6-988B-3EB745F61C63}
 		{934E9787-27BF-4703-BA8D-A5086FB58EB5} = {E61ECD69-2B45-4E12-B292-47F1185CCDA7}
 		{8522D4F2-9FB3-4C45-8727-2A9DA2376BA3} = {E61ECD69-2B45-4E12-B292-47F1185CCDA7}
+		{82B09A41-0818-4015-BD2C-EF1C6228B49B} = {D3EF0031-092C-4456-9043-AFE30336B154}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8DE3DFD0-8AF8-408A-A323-BDA116F3A6BD}
