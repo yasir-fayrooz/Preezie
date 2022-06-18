@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Preezie.Services.UsersService;
 using Preezie.Shared.DTOs.Users;
 
 namespace Preezie.Controllers
@@ -7,27 +8,35 @@ namespace Preezie.Controllers
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
+        private readonly UsersService _usersService;
 
-        public UsersController()
+        public UsersController(UsersService usersService)
         {
+            _usersService = usersService;
         }
 
         [HttpGet]
-        public IActionResult GetUsers()
+        public async Task<IActionResult> GetUsers()
         {
-            return null;
+            var usersList = await _usersService.GetUsers();
+
+            return Ok(usersList);
         }
 
         [HttpPost]
-        public IActionResult CreateUser([FromBody] User_DTO user_DTO)
+        public async Task<IActionResult> CreateUser([FromBody] CreateUser_DTO userDTO)
         {
-            return null;
+            await _usersService.CreateUser(userDTO);
+
+            return Ok();
         }
 
         [HttpPut("{userID}")]
-        public IActionResult UpdateUser([FromRoute] string userID)
+        public async Task<IActionResult> UpdateUser([FromRoute] string userID, [FromBody] UpdateUser_DTO userUpdateDTO)
         {
-            return null;
+            await _usersService.UpdateUser(userID, userUpdateDTO);
+
+            return Ok();
         }
     }
 }

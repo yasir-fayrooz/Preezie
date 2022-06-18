@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Preezie.Shared.DTOs\Preezie.Shared.DTOs.csproj" />
     <ProjectReference Include="..\Preezie.Solution.ApiFilters\Preezie.Solution.ApiFilters.csproj" />
   </ItemGroup>
 

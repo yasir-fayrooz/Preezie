@@ -1,3 +1,4 @@
+using Preezie.Services.UsersService;
 using Preezie.Solution.ApiFilters;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,9 @@ builder.Services.AddControllers(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//Add Services
+builder.Services.AddSingleton(typeof(UsersService));
 
 var app = builder.Build();
 
