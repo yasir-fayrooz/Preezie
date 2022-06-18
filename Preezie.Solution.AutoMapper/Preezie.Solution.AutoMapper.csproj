@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Preezie.DataAccess.Database\Preezie.DataAccess.Database.csproj" />
+    <ProjectReference Include="..\Preezie.DataAccess.Models\Preezie.DataAccess.Models.csproj" />
     <ProjectReference Include="..\Preezie.Shared.DTOs\Preezie.Shared.DTOs.csproj" />
   </ItemGroup>
 

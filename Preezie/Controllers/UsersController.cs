@@ -4,8 +4,8 @@ using Preezie.Shared.DTOs.Users;
 
 namespace Preezie.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
     public class UsersController : ControllerBase
     {
         private readonly UsersService _usersService;
@@ -16,7 +16,7 @@ namespace Preezie.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers(UserQuery_DTO userQueryDTO)
+        public async Task<IActionResult> GetUsers([FromQuery] UserQuery_DTO userQueryDTO)
         {
             var usersList = await _usersService.GetUsers(userQueryDTO);
 

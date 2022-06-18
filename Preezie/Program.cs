@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Preezie.DataAccess.Database;
 using Preezie.Services.UsersService;
 using Preezie.Solution.ApiFilters;
+using Preezie.Solution.AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,10 +21,23 @@ builder.Services.AddSwaggerGen();
 //Add DB Connection
 builder.Services.AddDbContext<PreezieContext>(opt => opt.UseInMemoryDatabase("PreezieDb"));
 
-//Add Services/Singletons
-builder.Services.AddSingleton(typeof(UsersService));
+//Add Services
+builder.Services.AddScoped(typeof(UsersService));
+
+//Add DTO Mappers
+builder.Services.AddAutoMapper(typeof(UserProfile));
 
 var app = builder.Build();
+
+//Seed the initial data for testing
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<PreezieContext>();
+    if (!context.Users.Any())
+    {
+        await Seed.SeedData(context);
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -37,13 +51,6 @@ if (app.Environment.IsDevelopment())
         opt.AllowAnyMethod();
         opt.AllowAnyOrigin();
     });
-}
-
-//Seed the initial data for testing
-var context = app.Services.GetService<PreezieContext>();
-if (!context.Users.Any())
-{
-    await Seed.SeedData(context);
 }
 
 app.UseHttpsRedirection();

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
@@ -16,6 +17,7 @@
     <ProjectReference Include="..\Preezie.Services.UsersService\Preezie.Services.UsersService.csproj" />
     <ProjectReference Include="..\Preezie.Shared.DTOs\Preezie.Shared.DTOs.csproj" />
     <ProjectReference Include="..\Preezie.Solution.ApiFilters\Preezie.Solution.ApiFilters.csproj" />
+    <ProjectReference Include="..\Preezie.Solution.AutoMapper\Preezie.Solution.AutoMapper.csproj" />
   </ItemGroup>
 
 </Project>
