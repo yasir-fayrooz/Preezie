@@ -16,9 +16,9 @@ namespace Preezie.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers(UserQuery_DTO userQueryDTO)
         {
-            var usersList = await _usersService.GetUsers();
+            var usersList = await _usersService.GetUsers(userQueryDTO);
 
             return Ok(usersList);
         }

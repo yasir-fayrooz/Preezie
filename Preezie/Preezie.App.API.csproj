@@ -2,15 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Preezie.DataAccess.Database\Preezie.DataAccess.Database.csproj" />
+    <ProjectReference Include="..\Preezie.Services.UsersService\Preezie.Services.UsersService.csproj" />
     <ProjectReference Include="..\Preezie.Shared.DTOs\Preezie.Shared.DTOs.csproj" />
     <ProjectReference Include="..\Preezie.Solution.ApiFilters\Preezie.Solution.ApiFilters.csproj" />
   </ItemGroup>

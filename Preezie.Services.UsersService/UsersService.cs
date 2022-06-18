@@ -1,17 +1,21 @@
-﻿using Preezie.Shared.DTOs.Users;
+﻿using Microsoft.EntityFrameworkCore;
+using Preezie.DataAccess.Database;
+using Preezie.Shared.DTOs.Users;
 
 namespace Preezie.Services.UsersService
 {
     public class UsersService
     {
-        public UsersService()
-        {
+        private readonly PreezieContext _context;
 
+        public UsersService(PreezieContext context)
+        {
+            _context = context;
         }
 
-        public async Task<List<UserList_DTO>> GetUsers()
+        public async Task<List<UserList_DTO>> GetUsers(UserQuery_DTO userQueryDTO)
         {
-            return null;
+            var users = await _context.Users.ToListAsync();
         }
 
         public async Task CreateUser(CreateUser_DTO userDTO)

@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preezie.Shared.DTOs", "Pree
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preezie.Services.UsersService", "Preezie.Services.UsersService\Preezie.Services.UsersService.csproj", "{2DE424FB-8E80-47B2-ADCE-90E0244C47A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preezie.DataAccess.Models", "Preezie.DataAccess.Models\Preezie.DataAccess.Models.csproj", "{DAC3B9AC-4D71-48FD-A57E-7E1ACB424AEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preezie.DataAccess.Database", "Preezie.DataAccess.Database\Preezie.DataAccess.Database.csproj", "{939DD96C-2704-4084-8977-01DC3762189F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{2DE424FB-8E80-47B2-ADCE-90E0244C47A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DE424FB-8E80-47B2-ADCE-90E0244C47A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DE424FB-8E80-47B2-ADCE-90E0244C47A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC3B9AC-4D71-48FD-A57E-7E1ACB424AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC3B9AC-4D71-48FD-A57E-7E1ACB424AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC3B9AC-4D71-48FD-A57E-7E1ACB424AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC3B9AC-4D71-48FD-A57E-7E1ACB424AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939DD96C-2704-4084-8977-01DC3762189F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939DD96C-2704-4084-8977-01DC3762189F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939DD96C-2704-4084-8977-01DC3762189F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939DD96C-2704-4084-8977-01DC3762189F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +74,8 @@ Global
 		{8522D4F2-9FB3-4C45-8727-2A9DA2376BA3} = {E61ECD69-2B45-4E12-B292-47F1185CCDA7}
 		{82B09A41-0818-4015-BD2C-EF1C6228B49B} = {D3EF0031-092C-4456-9043-AFE30336B154}
 		{2DE424FB-8E80-47B2-ADCE-90E0244C47A3} = {CE4D00E5-5B2B-4F65-B70D-444ED8EF40D1}
+		{DAC3B9AC-4D71-48FD-A57E-7E1ACB424AEF} = {7878ED23-C6C1-4481-A5F4-B63DD1D520E0}
+		{939DD96C-2704-4084-8977-01DC3762189F} = {7878ED23-C6C1-4481-A5F4-B63DD1D520E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8DE3DFD0-8AF8-408A-A323-BDA116F3A6BD}

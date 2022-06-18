@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using Preezie.DataAccess.Database;
 using Preezie.Services.UsersService;
 using Preezie.Solution.ApiFilters;
 
@@ -15,7 +17,10 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//Add Services
+//Add DB Connection
+builder.Services.AddDbContext<PreezieContext>(opt => opt.UseInMemoryDatabase("PreezieDb"));
+
+//Add Services/Singletons
 builder.Services.AddSingleton(typeof(UsersService));
 
 var app = builder.Build();
@@ -25,6 +30,20 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    
+    //Allow API to be hit from anywhere for testing purposes
+    app.UseCors(opt => {
+        opt.AllowAnyHeader();
+        opt.AllowAnyMethod();
+        opt.AllowAnyOrigin();
+    });
+}
+
+//Seed the initial data for testing
+var context = app.Services.GetService<PreezieContext>();
+if (!context.Users.Any())
+{
+    await Seed.SeedData(context);
 }
 
 app.UseHttpsRedirection();
