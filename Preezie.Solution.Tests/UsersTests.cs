@@ -15,8 +15,7 @@ namespace Preezie.Solution.Tests
         private WebApplicationFactory<Program> application;
         private HttpClient client;
 
-        [SetUp]
-        public void Setup()
+        public UsersTests()
         {
             application = new WebApplicationFactory<Program>();
             client = application.CreateClient();
