@@ -62,7 +62,7 @@ namespace Preezie.Services.UsersService
 
         public async Task CreateUser(CreateUser_DTO userDTO)
         {
-            if (_context.Users.Any(x => x.Email.Equals(userDTO.Email, StringComparison.CurrentCultureIgnoreCase)))
+            if (_context.Users.Any(x => x.Email.Equals(userDTO.Email, StringComparison.OrdinalIgnoreCase)))
                 throw new BadRequestException("User ID already exists in system");
 
             await _context.Users.AddAsync(new User
@@ -77,7 +77,7 @@ namespace Preezie.Services.UsersService
 
         public async Task UpdateUser(string userID, UpdateUser_DTO userUpdateDTO)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == userID);
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Email.Equals(userID, StringComparison.OrdinalIgnoreCase));
 
             //Return not found response if no user found
             if(user == null)
